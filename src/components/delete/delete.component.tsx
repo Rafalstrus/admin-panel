@@ -1,14 +1,28 @@
-export const fetchUsersData = async () => {
-    var data ={}
-        await fetch('https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data')
-        .then(async (response) => {
-            if (!response.ok) {
-                console.clear()
-                data = { "error": "404" }
-            }
-            else{
-                data = await response.json()
-            }
-        })
-    return await data
+import './delete.styles.css'
+
+import { useSelector } from 'react-redux'
+import { Box, Button } from '@material-ui/core'
+const Delete = () => {
+    const UsersData = useSelector((state: any) => (state.usersData))
+    const idToDelete = useSelector((state: any) => (state.idToDelete))
+    var userToDelete = {}
+    for (let position: number = 0; position < Object.keys(UsersData).length; position++) {
+        if (UsersData[position].id === idToDelete) {
+            userToDelete = UsersData[position]
+            break
+        }
+    }
+    console.log(userToDelete)
+    return (
+        <div id="delete-view">
+            <Box id="delete-component">
+                <p id="delete-title">Delete</p>
+                <p>{idToDelete}</p>
+                <Button>Cancel</Button>
+                <Button>Delete</Button>
+            </Box>
+        </div>
+    )
 }
+export default Delete
+

@@ -2,6 +2,31 @@
   margin: 1vw;
 }
 p{
-  
+  margin: 0;
+}
+table{
+  width: 97vw;
+  border-collapse: collapse;
+}
+td{
+  width: 2vw;
+  text-align: center;
+  padding: 5vh;
+  font-weight: 600;
+  color: rgb(54, 54, 54);
+}
+tr{
+  border:solid rgb(230, 230, 230);
+}
+tr:hover{
+  background-color: rgb(245, 245, 245)
+}
+button{
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.view-tittle{
+  font-size: 2.1vh;
+  font-weight: 600;
 }
 
